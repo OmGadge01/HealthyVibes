@@ -6,12 +6,14 @@ import Testimonials from "@/src/components/Testimonals"
 import CTA from "@/src/components/CTA"
 import Footer from "@/src/components/Footer"
 import Navbar from "../components/Navbar"
+import About from "../components/AboutUs"
 
 export default function Home() {
  return (
     <>
       <Navbar />
       <Hero />
+      <About/>
       <HowItWorks />
       <MealPlans />
       <MenuPreview />
