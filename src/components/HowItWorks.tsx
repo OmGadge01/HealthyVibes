@@ -43,13 +43,13 @@ export default function HowItWorks() {
           // Step 2: Cooking (2-4s)
           setTimeout(() => {
             setActiveStep(1);
-            setBikePosition(25);
+            setBikePosition(43);
           }, 2000);
           
           // Step 3: Delivery (4-6s)
           setTimeout(() => {
             setActiveStep(2);
-            setBikePosition(75);
+            setBikePosition(78);
           }, 4000);
           
           // Reset after animation
@@ -76,7 +76,7 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-green-100 px-4 py-2 rounded-full mb-4">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            {/* <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> */}
             <span className="text-sm font-semibold text-green-700">SIMPLE PROCESS</span>
           </div>
           
@@ -95,7 +95,7 @@ export default function HowItWorks() {
           <div className="absolute top-16 left-[10%] right-[10%] h-1 bg-gray-200 rounded-full">
             <div 
               className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full transition-all duration-1000 ease-in-out"
-              style={{ width: `${bikePosition}%` }}
+              style={{ width: `${bikePosition+5}%` }}
             ></div>
           </div>
 
