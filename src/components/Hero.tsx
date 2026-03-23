@@ -17,12 +17,16 @@ export default function Hero() {
         <div className="absolute top-40 left-40 w-80 h-80 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-8 pb-32">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-200px)]">
+      {/* ✅ only padding adjusted for mobile */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-20 sm:pb-24 lg:pb-32">
+        
+        {/* ✅ removed risky min-h override */}
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <div className="relative z-10 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight">
+            {/* ✅ slightly smaller base text only */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight">
               <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
                 Precision
               </span>
@@ -73,39 +77,28 @@ export default function Hero() {
             {/* Trust indicators */}
             <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-8 justify-center lg:justify-start text-xs sm:text-sm text-gray-500">
               <div className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-green-500"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                 </svg>
                 <span>5km delivery radius</span>
               </div>
+
               <div className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-green-500"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"/>
                 </svg>
                 <span>100% Fresh</span>
               </div>
             </div>
           </div>
 
-          {/* RIGHT CONTENT - PLATE */}
-          <div className="relative flex justify-center lg:justify-end items-center overflow-visible mt-8 lg:mt-0">  
+          {/* RIGHT CONTENT */}
+          <div className="relative flex justify-center lg:justify-end items-center overflow-visible mt-6 sm:mt-8 lg:mt-0">  
 
-            {/* animated plate */}
+            {/* ✅ ONLY safe width reduction */}
             <div
               ref={plateRef}
-              className="relative w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] lg:w-[670px] lg:h-[620px] animate-plateEntry"
+              className="relative w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] md:w-[550px] md:h-[550px] lg:w-[670px] lg:h-[620px] animate-plateEntry"
             >
               <Image
                 src={HeroPlate}
@@ -129,17 +122,9 @@ export default function Hero() {
           66% { transform: translate(-20px,20px) scale(0.9); }
         }
 
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-
-        .animation-delay-2000 {
-          animation-delay:2s;
-        }
-
-        .animation-delay-4000 {
-          animation-delay:4s;
-        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay:2s; }
+        .animation-delay-4000 { animation-delay:4s; }
 
         @keyframes gradient {
           0%,100% { background-position:0% 50%; }
@@ -151,31 +136,23 @@ export default function Hero() {
           animation: gradient 3s ease infinite;
         }
 
-        /* PLATE ENTER ANIMATION */
         @keyframes plateEntry {
-          0% {
-            transform: translateX(300px) rotate(0deg);
-            opacity:1;
-          }
-
-          100% {
-            transform: translateX(0) rotate(360deg);
-            opacity:1;
-          }
+          0% { transform: translateX(300px) rotate(0deg); opacity:1; }
+          100% { transform: translateX(0) rotate(360deg); opacity:1; }
         }
 
         .animate-plateEntry {
           animation: plateEntry 2s ease-out forwards;
         }
 
-        /* CONTINUOUS SLOW SPIN */
         @keyframes spinSlow {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
 
+        /* ✅ FIXED INVALID ANIMATION (this caused error) */
         .animate-spin-slow {
-          animation: spinSlow 10 10s linear 3;
+          animation: spinSlow 10s linear infinite;
         }
 
       `}</style>
