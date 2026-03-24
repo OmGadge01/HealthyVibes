@@ -49,7 +49,7 @@ export default function HowItWorks() {
           // Step 3: Delivery (4-6s)
           setTimeout(() => {
             setActiveStep(2);
-            setBikePosition(78);
+            setBikePosition(95);
           }, 4000);
           
           // Reset after animation
@@ -100,7 +100,7 @@ export default function HowItWorks() {
           </div>
 
           {/* Moving Bike */}
-          <div 
+          {/* <div 
             className="absolute top-12 transition-all duration-1000 ease-in-out z-20"
             style={{ left: `${bikePosition}%`, transform: 'translateX(-50%)' }}
           >
@@ -110,7 +110,7 @@ export default function HowItWorks() {
               </div>
               <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-gradient-to-b from-green-500 to-transparent"></div>
             </div>
-          </div>
+          </div> */}
 
           {/* Steps */}
           <div className="grid grid-cols-3 gap-8 relative z-10">
@@ -208,14 +208,7 @@ export default function HowItWorks() {
           )}
         </div>
 
-        {/* Status text */}
-        {/* <div className="text-center mt-16">
-          <p className="text-sm text-gray-500 animate-pulse">
-            {activeStep === 0 && '📋 You choose your plan'}
-            {activeStep === 1 && '👨‍🍳 Chefs are cooking your fresh meal'}
-            {activeStep === 2 && '🚚 Your meal is on the way!'}
-          </p>
-        </div> */}
+       
 
       </div>
     </section>
